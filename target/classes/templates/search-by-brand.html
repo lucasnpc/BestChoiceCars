@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>BestChoice Cars</h1>
+        <h3>Choose brand to find available models</h3>
+        <div class="grid-container">
+            <div class="grid-item">
+                <label for="brands">Brand:</label>
+            </div>
+            <div class="grid-item">
+                <select id="brands">
+                    <option th:each="brand : ${brands}" th:value="${brand}" th:text="${brand}"></option>
+                </select>
+            </div>
+            <div class="grid-item">
+                <button type="button">Find Models</button>
+            </div>
+            <div class="grid-item">
+                <button type="button">Back</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
