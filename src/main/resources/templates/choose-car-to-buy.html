@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>BestChoice Cars</h1>
+        <h3>Choose a car to buy</h3>
+
+        <form action="#" th:action="@{/buyCar}" method="post">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Number of Kilometers</th>
+                    <th>Price</th>
+                    <th>Fuel</th>
+                </tr>
+                <tr th:each="car : ${cars}">
+                    <td><input type="radio" th:name="carId" th:value="${car.idCar}" required></td>
+                    <td th:text="${car.brand}"></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.carYear}"></td>
+                    <td th:text="${car.nOfKms}"></td>
+                    <td th:text="${car.price}"></td>
+                    <td th:text="${car.fuel}"></td>
+                </tr>
+            </table>
+            <button type="submit">Buy Car</button>
+        </form>
+    </div>
+</body>
+
+</html>

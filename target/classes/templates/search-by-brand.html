@@ -35,14 +35,16 @@
             <div class="grid-item">
                 <label for="brands">Brand:</label>
             </div>
-            <div class="grid-item">
-                <select id="brands">
-                    <option th:each="brand : ${brands}" th:value="${brand}" th:text="${brand}"></option>
-                </select>
-            </div>
-            <div class="grid-item">
-                <button type="button">Find Models</button>
-            </div>
+            <form action="#" th:action="@{/chooseCarToBuy}" method="post">
+                <div class="grid-item">
+                    <select id="brands" name="brand">
+                        <option th:each="brand : ${brands}" th:value="${brand}" th:text="${brand}"></option>
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <button type="submit">Find Models</button>
+                </div>
+            </form>
             <div class="grid-item">
                 <button type="button">Back</button>
             </div>

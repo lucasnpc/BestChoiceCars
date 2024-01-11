@@ -12,6 +12,9 @@ import com.example.bestChoiceCars.model.Car;
 @Repository
 public interface CarsRepository extends JpaRepository<Car, UUID> {
 
+    @Query("SELECT c FROM Car c WHERE c.brand = ?1")
+    List<Car> findByBrand(String brand);
+
     @Query("SELECT DISTINCT c.brand FROM Car c")
     List<String> findDistinctBrands();
 

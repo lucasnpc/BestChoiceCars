@@ -9,14 +9,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TB_CAR")
+@Table(name = "tb_car")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idCar;
     private String brand;
     private String model;
-    private String year;
+    private String carYear;
     private Double nOfKms;
     private Double price;
     private String fuel;
@@ -40,11 +40,11 @@ public class Car {
     public void setModel(String model) {
         this.model = model;
     }
-    public String getYear() {
-        return year;
+    public String getCarYear() {
+        return carYear;
     }
-    public void setYear(String year) {
-        this.year = year;
+    public void setCarYear(String year) {
+        this.carYear = year;
     }
     public Double getnOfKms() {
         return nOfKms;
