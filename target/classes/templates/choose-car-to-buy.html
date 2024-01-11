@@ -20,6 +20,15 @@
             text-align: left;
         }
     </style>
+    <script>
+        window.onload = function() {
+            document.getElementById('chooseCarButton').disabled = true;
+        };
+
+        function enableButton() {
+            document.getElementById('chooseCarButton').disabled = false;
+        }
+    </script>
 </head>
 
 <body>
@@ -39,7 +48,7 @@
                     <th>Fuel</th>
                 </tr>
                 <tr th:each="car : ${cars}">
-                    <td><input type="radio" th:name="carId" th:value="${car.idCar}" required></td>
+                    <td><input type="radio" th:name="carId" th:value="${car.idCar}" onclick="enableButton()" required></td>
                     <td th:text="${car.brand}"></td>
                     <td th:text="${car.model}"></td>
                     <td th:text="${car.carYear}"></td>
@@ -48,7 +57,7 @@
                     <td th:text="${car.fuel}"></td>
                 </tr>
             </table>
-            <button type="submit">Buy Car</button>
+            <button type="submit" id="chooseCarButton">Buy Car</button>
         </form>
     </div>
 </body>

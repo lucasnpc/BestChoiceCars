@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -25,32 +26,37 @@
             text-align: center;
         }
     </style>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('findCarsButton').disabled = true;
+        };
+
+        function enableButton() {
+            document.getElementById('findCarsButton').disabled = false;
+        }
+    </script>
 </head>
 
 <body>
     <div class="content">
         <h1>BestChoice Cars</h1>
-        <h3>Choose brand to find available models</h3>
+        <h3>Choose price range to find available cars</h3>
         <div class="grid-container">
             <div class="grid-item">
-                <label for="brands">Brand:</label>
+                <label for="priceRange">Price Range:</label>
             </div>
             <div class="grid-item">
-                <select id="brands">
-                    <option value="toyota">Toyota</option>
-                    <option value="honda">Honda</option>
-                    <option value="ford">Ford</option>
-                </select>
-            </div>
-            <div class="grid-item">
-                <button type="button">Find Models</button>
-            </div>
-            <div class="grid-item">
-                <button type="button">Back</button>
+                <form action="#" th:action="@{/chooseCarToBuy}" method="post">
+                    <input type="radio" id="lessThan20000" name="priceRange" onclick="enableButton()" value="lessThan20000">
+                    <label for="lessThan20000"> < 20000</label><br>
+                    <input type="radio" id="moreThan20000" name="priceRange" onclick="enableButton()" value="moreThan20000">
+                    <label for="moreThan20000"> > 20000</label><br>
+                    <button type="submit" id="findCarsButton">Find Cars</button>
+                </form>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

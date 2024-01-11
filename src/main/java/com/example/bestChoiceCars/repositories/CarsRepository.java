@@ -18,4 +18,10 @@ public interface CarsRepository extends JpaRepository<Car, UUID> {
     @Query("SELECT DISTINCT c.brand FROM Car c")
     List<String> findDistinctBrands();
 
+    @Query("SELECT c FROM Car c WHERE c.price < ?1")
+    List<Car> findByPriceLessThan(Double price);
+
+    @Query("SELECT c FROM Car c WHERE c.price > ?1")
+    List<Car> findByPriceGreaterThan(Double price);
+
 }

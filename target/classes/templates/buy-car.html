@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>BestChoice Cars</h1>
+        <h2>Congratulations on your new car!</h2>
+        <p>You have selected a <span th:text="${car.brand}"></span> <span th:text="${car.model}"></span>.</p>
+    </div>
+</body>
+
+</html>
