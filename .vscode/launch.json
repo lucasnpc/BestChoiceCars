@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BestChoiceCarsApplication<bestChoiceCars>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.bestChoiceCars.BestChoiceCarsApplication",
+            "projectName": "bestChoiceCars",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
